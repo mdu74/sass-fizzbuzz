@@ -1,0 +1,33 @@
+$fizz: "fizz";
+$buzz: "buzz";
+$fizzbuzz: "fizzbuzz";
+
+@mixin isfizzbuzz($input){
+    @if(divisible-by-both-three-and-five($input)){
+        content: $fizzbuzz;
+    }
+    
+    @else if (divisible-by-three($input)){
+        content: $fizz;
+    }
+    
+    @else if (divisible-by-five($input)){
+        content: $buzz;
+    }
+    
+    @else{
+        content: $input;        
+    }
+}
+
+@function divisible-by-both-three-and-five($input){
+    @return divisible-by-three($input) and divisible-by-five($input);
+}
+
+@function divisible-by-three($input){
+    @return $input%3 == 0;
+}
+
+@function divisible-by-five($input){
+    @return $input%5 == 0;
+}
