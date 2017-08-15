@@ -15,7 +15,7 @@ describe('fizzbuzz', function() {
             //---------------Execute Test ----------------------
             var result = isfizzbuzz.calledWithArgs(input);
             //---------------Test Result -----------------------
-            isfizzbuzz.calledWithArgs(1).equals('content : 1');
+            result.equals('content : 1');
         });
     });
     
