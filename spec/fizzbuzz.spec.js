@@ -9,14 +9,24 @@ describe('fizzbuzz', function() {
     var isfizzbuzz = sassaby.includedMixin('isfizzbuzz'); //sut
     
     describe('IsFizzBuzz_Given number 1', function() {
-        it('Should set content to number', function() {      
+        it('Should set content to number', function() {
+            //---------------Set up test pack-------------------
+            var input = 1;
+            //---------------Execute Test ----------------------
+            var result = isfizzbuzz.calledWithArgs(input);
+            //---------------Test Result -----------------------
             isfizzbuzz.calledWithArgs(1).equals('content : 1');
         });
     });
     
     describe('IsFizzBuzz_Given number 2', function() {
         it('Should set content to number', function() {
-            isfizzbuzz.calledWithArgs(2).equals('content : 2');
+            //---------------Set up test pack-------------------
+            var input = 2;
+            //---------------Execute Test ----------------------
+            var result = isfizzbuzz.calledWithArgs(input);
+            //---------------Test Result -----------------------
+            result.equals('content : 2');
         });
     });
     
@@ -36,7 +46,12 @@ describe('fizzbuzz', function() {
     
     describe('IsFizzBuzz_Given number 4', function() {
         it('Should set content to number', function() {
-            isfizzbuzz.calledWithArgs(4).equals('content : 4');
+            //---------------Set up test pack-------------------
+            var input = 4;
+            //---------------Execute Test ----------------------
+            var result = isfizzbuzz.calledWithArgs(input);
+            //---------------Test Result -----------------------
+            result.equals('content : 4');
         });
     });
     
