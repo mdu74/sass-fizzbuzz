@@ -7,26 +7,19 @@ describe('fizzbuzz', function() {
     var file = path.resolve(__dirname, '../fizzbuzz.scss');
     var sassaby = new Sassaby(file);
     var isfizzbuzz = sassaby.includedMixin('isfizzbuzz'); //sut
-    
-    describe('IsFizzBuzz_Given number 1', function() {
+        
+    describe('IsFizzBuzz_Given number not divisible by 3 or 5', function() {
         it('Should set content to number', function() {
-            //---------------Set up test pack-------------------
-            var input = 1;
-            //---------------Execute Test ----------------------
-            var result = isfizzbuzz.calledWithArgs(input);
-            //---------------Test Result -----------------------
-            result.equals('content : 1');
-        });
-    });
-    
-    describe('IsFizzBuzz_Given number 2', function() {
-        it('Should set content to number', function() {
-            //---------------Set up test pack-------------------
-            var input = 2;
-            //---------------Execute Test ----------------------
-            var result = isfizzbuzz.calledWithArgs(input);
-            //---------------Test Result -----------------------
-            result.equals('content : 2');
+            var notDivisibleByThreeOrFiveArray = [1, 2, 4, 7, 8];
+            notDivisibleByThreeOrFiveArray.forEach(function(numberNotDivisibleByThreeOrFive) {
+                //---------------Set up test pack-------------------
+                var input = numberNotDivisibleByThreeOrFive;
+                var expected = numberNotDivisibleByThreeOrFive;
+                //---------------Execute Test ----------------------
+                var result = isfizzbuzz.calledWithArgs(input);
+                //---------------Test Result -----------------------
+                result.equals('content :' + expected);
+            });
         });
     });
     
@@ -44,18 +37,7 @@ describe('fizzbuzz', function() {
         });
     });
     
-    describe('IsFizzBuzz_Given number 4', function() {
-        it('Should set content to number', function() {
-            //---------------Set up test pack-------------------
-            var input = 4;
-            //---------------Execute Test ----------------------
-            var result = isfizzbuzz.calledWithArgs(input);
-            //---------------Test Result -----------------------
-            result.equals('content : 4');
-        });
-    });
-    
-    describe('IsFizzBuzz_Given number 5', function() {
+    describe('IsFizzBuzz_Given number divisible by 5', function() {
         it('Should set content to buzz', function() {
             var divisibleByFiveArray = [5, 10, 20];
             divisibleByFiveArray.forEach(function(numberDivisibleByFive) {
