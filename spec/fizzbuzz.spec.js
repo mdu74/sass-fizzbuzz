@@ -20,9 +20,17 @@ describe('fizzbuzz', function() {
         });
     });
     
-    describe('IsFizzBuzz_Given number 3', function() {
+    describe('IsFizzBuzz_Given number divisible by 3', function() {
         it('Should set content to fizz', function() {
-            isfizzbuzz.calledWithArgs(3).equals('content : \"fizz\"');
+            var divisibleByThreeArray = [3, 6, 9];
+            divisibleByThreeArray.forEach(function(numberDivisibleByThree) {
+                //---------------Set up test pack-------------------
+                var input = numberDivisibleByThree;
+                //---------------Execute Test ----------------------
+                var result = isfizzbuzz.calledWithArgs(input);
+                //---------------Test Result -----------------------
+                result.equals('content : \"fizz\"');
+            });
         });
     });
     
@@ -34,25 +42,29 @@ describe('fizzbuzz', function() {
     
     describe('IsFizzBuzz_Given number 5', function() {
         it('Should set content to buzz', function() {
-            isfizzbuzz.calledWithArgs(5).equals('content : \"buzz\"');
-        });
-    });
-    
-    describe('IsFizzBuzz_Given number divisible by 3', function() {
-        it('Should set content to fizz', function() {
-            isfizzbuzz.calledWithArgs(6).equals('content : \"fizz\"');
-        });
-    });
-    
-    describe('IsFizzBuzz_Given number divisible by 5', function() {
-        it('Should set content to buzz', function() {
-            isfizzbuzz.calledWithArgs(10).equals('content : \"buzz\"');
+            var divisibleByFiveArray = [5, 10, 20];
+            divisibleByFiveArray.forEach(function(numberDivisibleByFive) {
+                //---------------Set up test pack-------------------
+                var input = numberDivisibleByFive;
+                //---------------Execute Test ----------------------
+                var result = isfizzbuzz.calledWithArgs(input);
+                //---------------Test Result -----------------------
+                result.equals('content : \"buzz\"');
+            });
         });
     });
     
     describe('IsFizzBuzz_Given number divisible by both 3 and 5', function() {
         it('Should set content to fizzbuzz', function() {
-            isfizzbuzz.calledWithArgs(15).equals('content : \"fizzbuzz\"');
+            var divisibleByBothThreeAndFiveArray = [15, 30, 75];
+            divisibleByBothThreeAndFiveArray.forEach(function(numberDivisibleByBothThreeFive) {
+                //---------------Set up test pack-------------------
+                var input = numberDivisibleByBothThreeFive;
+                //---------------Execute Test ----------------------
+                var result = isfizzbuzz.calledWithArgs(input);
+                //---------------Test Result -----------------------
+                result.equals('content : \"fizzbuzz\"');
+            });
         });
     });
 });
