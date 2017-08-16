@@ -14,11 +14,11 @@ describe('fizzbuzz', function() {
             notDivisibleByThreeOrFiveArray.forEach(function(numberNotDivisibleByThreeOrFive) {
                 //---------------Set up test pack-------------------
                 var input = numberNotDivisibleByThreeOrFive;
-                var expected = numberNotDivisibleByThreeOrFive;
+                var expected = 'content :' + numberNotDivisibleByThreeOrFive;
                 //---------------Execute Test ----------------------
                 var result = isfizzbuzz.calledWithArgs(input);
                 //---------------Test Result -----------------------
-                result.equals('content :' + expected);
+                result.equals(expected);
             });
         });
     });
@@ -29,10 +29,11 @@ describe('fizzbuzz', function() {
             divisibleByThreeArray.forEach(function(numberDivisibleByThree) {
                 //---------------Set up test pack-------------------
                 var input = numberDivisibleByThree;
+                var expected = 'content : \"fizz\"';
                 //---------------Execute Test ----------------------
                 var result = isfizzbuzz.calledWithArgs(input);
                 //---------------Test Result -----------------------
-                result.equals('content : \"fizz\"');
+                result.equals(expected);
             });
         });
     });
@@ -43,10 +44,11 @@ describe('fizzbuzz', function() {
             divisibleByFiveArray.forEach(function(numberDivisibleByFive) {
                 //---------------Set up test pack-------------------
                 var input = numberDivisibleByFive;
+                var expected = 'content : \"buzz\"';
                 //---------------Execute Test ----------------------
                 var result = isfizzbuzz.calledWithArgs(input);
                 //---------------Test Result -----------------------
-                result.equals('content : \"buzz\"');
+                result.equals(expected);
             });
         });
     });
@@ -57,10 +59,11 @@ describe('fizzbuzz', function() {
             divisibleByBothThreeAndFiveArray.forEach(function(numberDivisibleByBothThreeFive) {
                 //---------------Set up test pack-------------------
                 var input = numberDivisibleByBothThreeFive;
+                var expected = 'content : \"fizzbuzz\"';
                 //---------------Execute Test ----------------------
                 var result = isfizzbuzz.calledWithArgs(input);
                 //---------------Test Result -----------------------
-                result.equals('content : \"fizzbuzz\"');
+                result.equals(expected);
             });
         });
     });
